@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      VLSI003
+HostName                       rhcadence
+ProcessIdentifier              744597
+ProcessCreationTime_UTC        1748656552
+ProcessCreationTime_Readable   Fri May 30 19:55:52 2025 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/xh018_tut_env/tarea_3/NAND/schematic/sch.oa.cdslck
+TimeEditLocked                 Fri May 30 19:57:12 2025 CST
