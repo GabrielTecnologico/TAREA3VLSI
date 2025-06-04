@@ -1,0 +1,180 @@
+
+Cadence Tempus(TM) Timing Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.13-s095_1, built Mon Aug 28 11:00:09 PDT 2023
+Options:	-stylus -files /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl 
+Date:		Tue Jun  3 21:35:14 2025
+Host:		rhcadence (x86_64 w/Linux 4.18.0-553.46.1.el8_10.x86_64) (6cores*12cpus*Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz 30720KB)
+OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+
+License:
+		[21:35:14.354178] Configured Lic search path (21.01-s002): 5280@172.21.7.253:1717@172.21.16.253
+
+		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Change the soft stacksize limit to 0.2%RAM (95 mbytes). Set global soft_stack_size_limit to change the value.
+environment variable TMPDIR is '/tmp/ssv_tmpdir_1435711_1rAKSA'.
+#@ Processing -execute option
+@tempus 1> 
+#@ Processing -files option
+Sourcing tcl/tk file '/mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl' ...
+@tempus 1> source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl
+#@ Begin verbose source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl (pre)
+@file 1: set PROY_ROOT ${env(PROY_ROOT)}
+@file 2: set WORK_DIR ${PROY_ROOT}/work
+@file 3:
+@file 4: set LIB_PATH "${PROY_ROOT}/lib/timing"
+@file 5:
+@file 6: set RTL_PATH ${env(RTL_PATH)}
+@file 7: set SDC_PATH $PROY_ROOT/src/constraints
+@file 8: set TB_PATH $PROY_ROOT/src/testbench
+@file 9:
+@file 10: set TOP_DESIGN ${env(TOP_DESIGN)}
+@file 11:
+@file 12:
+@@file 13: read_mmmc ${env(SCRIPTS_PATH)}/view_definition.tcl
+#@ Begin verbose source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/view_definition.tcl (pre)
+@@file 1: create_library_set -name fast\
+    -timing\
+    [list $LIB_PATH/gpdk_wp_1p9v_0c.lib]
+@file 4:
+@@file 5: create_library_set -name slow\
+    -timing\
+    [list $LIB_PATH/gpdk_ws_1p65v_125c.lib]
+@file 8:
+@@file 9: create_timing_condition -name default_mapping_tc_2\
+    -library_sets [list fast]
+@@file 11: create_timing_condition -name default_mapping_tc_1\
+    -library_sets [list slow]
+@file 13:
+@@file 14: create_opcond -name PVT1 \
+    -process 1 \
+    -voltage 2 \
+    -temperature 120 \
+    
+@@file 19: create_delay_corner -name slow_max\
+    -timing_condition {default_mapping_tc_1}
+@file 21:
+@@file 22: create_delay_corner -name fast_min\
+    -timing_condition {default_mapping_tc_2}
+@file 24:
+@@file 25: create_constraint_mode -name functional\
+    -sdc_files\
+    [list ${WORK_DIR}/synth/outputs/${TOP_DESIGN}_sdc.sdc]
+@file 28:
+@@file 29: create_analysis_view -name func_slow_max -constraint_mode functional -delay_corner slow_max
+@@file 30: create_analysis_view -name func_fast_min -constraint_mode functional -delay_corner fast_min
+@file 31:
+@@file 32: set_analysis_view -setup [list func_slow_max] -hold [list func_fast_min]
+Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+#@ End verbose source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/view_definition.tcl
+Reading slow timing library '/mnt/vol_NFS_cadencedata/VLSI/WORKSPACES/vlsig02af/LAB3/LOGIC_SYNTH/lib/timing/gpdk_ws_1p65v_125c.lib' ...
+Read 4 cells in library 'gpdk_ws_1p65v_125c' 
+Reading fast timing library '/mnt/vol_NFS_cadencedata/VLSI/WORKSPACES/vlsig02af/LAB3/LOGIC_SYNTH/lib/timing/gpdk_wp_1p9v_0c.lib' ...
+Read 4 cells in library 'gpdk_wp_1p9v_0c' 
+@file 14:
+@@file 15: read_netlist ${WORK_DIR}/synth/outputs/${TOP_DESIGN}_netlist.v 
+#% Begin Load netlist data ... (date=06/03 21:35:36, mem=1325.6M)
+*** Begin netlist parsing (mem=1361.8M) ***
+Reading verilog netlist '/mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1521.820M, initial mem = 638.754M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1521.8M) ***
+#% End Load netlist data ... (date=06/03 21:35:36, total cpu=0:00:00.4, real=0:00:00.0, peak res=1427.3M, current mem=1423.5M)
+Top level cell is counter.
+Building hierarchical netlist for Cell counter ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 9 modules.
+** info: there are 15 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1872.266M, initial mem = 638.754M) ***
+@file 16:
+@@file 17: init_design
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: func_slow_max
+    RC-Corner Name        : default_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+ 
+ Analysis View: func_fast_min
+    RC-Corner Name        : default_rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PostRoute Res Factor        : 1
+    RC-Corner PostRoute Cap Factor        : 1
+    RC-Corner PostRoute XCap Factor       : 1
+Reading timing constraints file '/mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc' ...
+Current (total cpu=0:00:19.3, real=0:00:23.0, peak res=2061.4M, current mem=2061.4M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc, Line 10).
+
+counter
+INFO (CTE): Reading of timing constraints file /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2075.9M, current mem=2075.9M)
+Current (total cpu=0:00:19.4, real=0:00:23.0, peak res=2075.9M, current mem=2075.9M)
+Total number of combinational cells: 3
+Total number of sequential cells: 1
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers:
+Total number of usable buffers: 0
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX0
+Total number of usable inverters: 1
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+@file 18:
+@@file 19: report_timing -path_type full_clock -max_paths 100 > reports/timing_report_late.rpt
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2327.32 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Name: counter
+# Design Mode: 65nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (1 T). (MEM=2376.71)
+End delay calculation. (MEM=2593.3 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2593.3 CPU=0:00:00.1 REAL=0:00:00.0)
+@@file 20: report_timing -path_type full_clock -max_paths 100 -early > reports/timing_report_early.rpt
+@@file 21: report_constraint -all_violators > reports/timing_all_violators.rpt
+@file 22: exit
+
+*** Memory Usage v#1 (Current mem = 2535.297M, initial mem = 638.754M) ***
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPOPT-3000          1  Buffer footprint is not defined or is an...
+WARNING   TCLCMD-1461          2  Skipped unsupported command: %s          
+*** Message Summary: 3 warning(s), 0 error(s)
+
+--- Ending "Tempus Timing Solution" (totcpu=0:00:20.6, real=0:00:24.0, mem=2535.3M) ---
+

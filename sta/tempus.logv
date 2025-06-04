@@ -1,0 +1,270 @@
+[06/03 21:35:14      0s] 
+[06/03 21:35:14      0s] Cadence Tempus(TM) Timing Solution.
+[06/03 21:35:14      0s] Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+[06/03 21:35:14      0s] 
+[06/03 21:35:14      0s] Version:	v22.13-s095_1, built Mon Aug 28 11:00:09 PDT 2023
+[06/03 21:35:14      0s] Options:	-stylus -files /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl 
+[06/03 21:35:14      0s] Date:		Tue Jun  3 21:35:14 2025
+[06/03 21:35:14      0s] Host:		rhcadence (x86_64 w/Linux 4.18.0-553.46.1.el8_10.x86_64) (6cores*12cpus*Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz 30720KB)
+[06/03 21:35:14      0s] OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+[06/03 21:35:14      0s] 
+[06/03 21:35:14      0s] License:
+[06/03 21:35:14      0s] 		[21:35:14.354178] Configured Lic search path (21.01-s002): 5280@172.21.7.253:1717@172.21.16.253
+[06/03 21:35:14      0s] 
+[06/03 21:35:14      0s] 		tpsxl	Tempus Timing Signoff Solution XL	22.1	checkout succeeded
+[06/03 21:35:14      0s] 		16 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[06/03 21:35:25     10s] 
+[06/03 21:35:25     10s] 
+[06/03 21:35:26     11s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Tempus Timing Solution v22.13-s095_1 (64bit) 08/28/2023 11:00 (Linux 3.10.0-693.el7.x86_64)
+[06/03 21:35:33     16s] @(#)CDS: NanoRoute 22.13-s095_1 NR230808-0153/22_13-UB (database version 18.20.615) {superthreading v2.20}
+[06/03 21:35:33     16s] @(#)CDS: AAE 22.13-s029 (64bit) 08/28/2023 (Linux 3.10.0-693.el7.x86_64)
+[06/03 21:35:33     16s] @(#)CDS: CTE 22.13-s030_1 () Aug 22 2023 02:51:11 ( )
+[06/03 21:35:33     16s] @(#)CDS: SYNTECH 22.13-s015_1 () Aug 20 2023 22:21:55 ( )
+[06/03 21:35:33     16s] @(#)CDS: CPE v22.13-s082
+[06/03 21:35:33     16s] @(#)CDS: OA 22.60-p088 Tue Mar 21 03:05:14 2023
+[06/03 21:35:33     16s] @(#)CDS: SGN 22.20-d001 (02-Jan-2023) (64 bit executable, TkQt5.9.1)
+[06/03 21:35:33     16s] @(#)CDS: RCDB 11.15.0
+[06/03 21:35:33     16s] @(#)CDS: STYLUS 22.11-s006_1 (04/03/2023 03:37 PDT)
+[06/03 21:35:33     16s] Change the soft stacksize limit to 0.2%RAM (95 mbytes). Set global soft_stack_size_limit to change the value.
+[06/03 21:35:34     16s] **INFO: (TMPDIR-1001): Create and set the environment variable TMPDIR to '/tmp/ssv_tmpdir_1435711_1rAKSA'.
+[06/03 21:35:34     16s] environment variable TMPDIR is '/tmp/ssv_tmpdir_1435711_1rAKSA'.
+[06/03 21:35:36     18s] #@ Processing -execute option
+[06/03 21:35:36     18s] @tempus 1> 
+[06/03 21:35:36     18s] #@ Processing -files option
+[06/03 21:35:36     18s] Sourcing tcl/tk file '/mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl' ...
+[06/03 21:35:36     18s] @tempus 1> source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl
+[06/03 21:35:36     18s] #@ Begin verbose source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/sta.tcl (pre)
+[06/03 21:35:36     18s] @file 1: set PROY_ROOT ${env(PROY_ROOT)}
+[06/03 21:35:36     18s] @file 2: set WORK_DIR ${PROY_ROOT}/work
+[06/03 21:35:36     18s] @file 3:
+[06/03 21:35:36     18s] @file 4: set LIB_PATH "${PROY_ROOT}/lib/timing"
+[06/03 21:35:36     18s] @file 5:
+[06/03 21:35:36     18s] @file 6: set RTL_PATH ${env(RTL_PATH)}
+[06/03 21:35:36     18s] @file 7: set SDC_PATH $PROY_ROOT/src/constraints
+[06/03 21:35:36     18s] @file 8: set TB_PATH $PROY_ROOT/src/testbench
+[06/03 21:35:36     18s] @file 9:
+[06/03 21:35:36     18s] @file 10: set TOP_DESIGN ${env(TOP_DESIGN)}
+[06/03 21:35:36     18s] @file 11:
+[06/03 21:35:36     18s] @file 12:
+[06/03 21:35:36     18s] @@file 13: read_mmmc ${env(SCRIPTS_PATH)}/view_definition.tcl
+[06/03 21:35:36     18s] #@ Begin verbose source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/view_definition.tcl (pre)
+[06/03 21:35:36     18s] @@file 1: create_library_set -name fast\
+[06/03 21:35:36     18s]     -timing\
+[06/03 21:35:36     18s]     [list $LIB_PATH/gpdk_wp_1p9v_0c.lib]
+[06/03 21:35:36     18s] @file 4:
+[06/03 21:35:36     18s] @@file 5: create_library_set -name slow\
+[06/03 21:35:36     18s]     -timing\
+[06/03 21:35:36     18s]     [list $LIB_PATH/gpdk_ws_1p65v_125c.lib]
+[06/03 21:35:36     18s] @file 8:
+[06/03 21:35:36     18s] @@file 9: create_timing_condition -name default_mapping_tc_2\
+[06/03 21:35:36     18s]     -library_sets [list fast]
+[06/03 21:35:36     18s] @@file 11: create_timing_condition -name default_mapping_tc_1\
+[06/03 21:35:36     18s]     -library_sets [list slow]
+[06/03 21:35:36     18s] @file 13:
+[06/03 21:35:36     18s] @@file 14: create_opcond -name PVT1 \
+[06/03 21:35:36     18s]     -process 1 \
+[06/03 21:35:36     18s]     -voltage 2 \
+[06/03 21:35:36     18s]     -temperature 120 \
+[06/03 21:35:36     18s]     
+[06/03 21:35:36     18s] @@file 19: create_delay_corner -name slow_max\
+[06/03 21:35:36     18s]     -timing_condition {default_mapping_tc_1}
+[06/03 21:35:36     18s] @file 21:
+[06/03 21:35:36     18s] @@file 22: create_delay_corner -name fast_min\
+[06/03 21:35:36     18s]     -timing_condition {default_mapping_tc_2}
+[06/03 21:35:36     18s] @file 24:
+[06/03 21:35:36     18s] @@file 25: create_constraint_mode -name functional\
+[06/03 21:35:36     18s]     -sdc_files\
+[06/03 21:35:36     18s]     [list ${WORK_DIR}/synth/outputs/${TOP_DESIGN}_sdc.sdc]
+[06/03 21:35:36     18s] @file 28:
+[06/03 21:35:36     18s] @@file 29: create_analysis_view -name func_slow_max -constraint_mode functional -delay_corner slow_max
+[06/03 21:35:36     18s] @@file 30: create_analysis_view -name func_fast_min -constraint_mode functional -delay_corner fast_min
+[06/03 21:35:36     18s] @file 31:
+[06/03 21:35:36     18s] @@file 32: set_analysis_view -setup [list func_slow_max] -hold [list func_fast_min]
+[06/03 21:35:36     18s] Number of views requested 1 are allowed with the current licenses... continuing with set_analysis_view.
+[06/03 21:35:36     18s] #@ End verbose source /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/tcl/view_definition.tcl
+[06/03 21:35:36     18s] Reading slow timing library '/mnt/vol_NFS_cadencedata/VLSI/WORKSPACES/vlsig02af/LAB3/LOGIC_SYNTH/lib/timing/gpdk_ws_1p65v_125c.lib' ...
+[06/03 21:35:36     18s] Read 4 cells in library 'gpdk_ws_1p65v_125c' 
+[06/03 21:35:36     18s] Reading fast timing library '/mnt/vol_NFS_cadencedata/VLSI/WORKSPACES/vlsig02af/LAB3/LOGIC_SYNTH/lib/timing/gpdk_wp_1p9v_0c.lib' ...
+[06/03 21:35:36     18s] Read 4 cells in library 'gpdk_wp_1p9v_0c' 
+Ending "PreSetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1363.9M, current mem=1325.0M)
+[06/03 21:35:36     18s] @file 14:
+[06/03 21:35:36     18s] @@file 15: read_netlist ${WORK_DIR}/synth/outputs/${TOP_DESIGN}_netlist.v 
+[06/03 21:35:36     18s] #% Begin Load netlist data ... (date=06/03 21:35:36, mem=1325.6M)
+[06/03 21:35:36     18s] *** Begin netlist parsing (mem=1361.8M) ***
+[06/03 21:35:36     18s] Reading verilog netlist '/mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_netlist.v'
+[06/03 21:35:36     18s] 
+[06/03 21:35:36     18s] *** Memory Usage v#1 (Current mem = 1521.820M, initial mem = 638.754M) ***
+[06/03 21:35:36     18s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1521.8M) ***
+[06/03 21:35:36     18s] #% End Load netlist data ... (date=06/03 21:35:36, total cpu=0:00:00.4, real=0:00:00.0, peak res=1427.3M, current mem=1423.5M)
+[06/03 21:35:36     18s] Top level cell is counter.
+[06/03 21:35:36     18s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1441.0M, current mem=1441.0M)
+[06/03 21:35:36     18s] Building hierarchical netlist for Cell counter ...
+[06/03 21:35:36     18s] ***** UseNewTieNetMode *****.
+[06/03 21:35:36     18s] *** Netlist is unique.
+[06/03 21:35:36     18s] ** info: there are 9 modules.
+[06/03 21:35:36     18s] ** info: there are 15 stdCell insts.
+[06/03 21:35:36     18s] 
+[06/03 21:35:36     18s] *** Memory Usage v#1 (Current mem = 1872.266M, initial mem = 638.754M) ***
+[06/03 21:35:36     18s] @file 16:
+[06/03 21:35:36     18s] @@file 17: init_design
+[06/03 21:35:36     18s] Set Default Input Pin Transition as 0.1 ps.
+[06/03 21:35:37     18s] Extraction setup Started 
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] eee: Trim Metal Layers: { }
+[06/03 21:35:37     18s] Summary of Active RC-Corners : 
+[06/03 21:35:37     18s]  
+[06/03 21:35:37     18s]  Analysis View: func_slow_max
+[06/03 21:35:37     18s]     RC-Corner Name        : default_rc_corner
+[06/03 21:35:37     18s]     RC-Corner Index       : 0
+[06/03 21:35:37     18s]     RC-Corner Temperature : 25 Celsius
+[06/03 21:35:37     18s]     RC-Corner Cap Table   : ''
+[06/03 21:35:37     18s]     RC-Corner PostRoute Res Factor        : 1
+[06/03 21:35:37     18s]     RC-Corner PostRoute Cap Factor        : 1
+[06/03 21:35:37     18s]     RC-Corner PostRoute XCap Factor       : 1
+[06/03 21:35:37     18s]  
+[06/03 21:35:37     18s]  Analysis View: func_fast_min
+[06/03 21:35:37     18s]     RC-Corner Name        : default_rc_corner
+[06/03 21:35:37     18s]     RC-Corner Index       : 0
+[06/03 21:35:37     18s]     RC-Corner Temperature : 25 Celsius
+[06/03 21:35:37     18s]     RC-Corner Cap Table   : ''
+[06/03 21:35:37     18s]     RC-Corner PostRoute Res Factor        : 1
+[06/03 21:35:37     18s]     RC-Corner PostRoute Cap Factor        : 1
+[06/03 21:35:37     18s]     RC-Corner PostRoute XCap Factor       : 1
+[06/03 21:35:37     19s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1949.0M, current mem=1689.5M)
+[06/03 21:35:37     19s] Reading timing constraints file '/mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc' ...
+[06/03 21:35:37     19s] Current (total cpu=0:00:19.3, real=0:00:23.0, peak res=2061.4M, current mem=2061.4M)
+[06/03 21:35:37     19s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc, Line 9).
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc, Line 10).
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] counter
+[06/03 21:35:37     19s] INFO (CTE): Reading of timing constraints file /mnt/vol_NFS_cadencedata/ESTUDIANTES/VLSI003/vlsig02af/LAB3/LOGIC_SYNTH/work/synth/outputs/counter_sdc.sdc completed, with 2 WARNING
+[06/03 21:35:37     19s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2075.9M, current mem=2075.9M)
+[06/03 21:35:37     19s] Current (total cpu=0:00:19.4, real=0:00:23.0, peak res=2075.9M, current mem=2075.9M)
+[06/03 21:35:37     19s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[06/03 21:35:37     19s] Summary for sequential cells identification: 
+[06/03 21:35:37     19s]   Identified SBFF number: 1
+[06/03 21:35:37     19s]   Identified MBFF number: 0
+[06/03 21:35:37     19s]   Identified SB Latch number: 0
+[06/03 21:35:37     19s]   Identified MB Latch number: 0
+[06/03 21:35:37     19s]   Not identified SBFF number: 0
+[06/03 21:35:37     19s]   Not identified MBFF number: 0
+[06/03 21:35:37     19s]   Not identified SB Latch number: 0
+[06/03 21:35:37     19s]   Not identified MB Latch number: 0
+[06/03 21:35:37     19s]   Number of sequential cells which are not FFs: 0
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Deleting Cell Server Begin ...
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Deleting Cell Server End ...
+[06/03 21:35:37     19s] Total number of combinational cells: 3
+[06/03 21:35:37     19s] Total number of sequential cells: 1
+[06/03 21:35:37     19s] Total number of tristate cells: 0
+[06/03 21:35:37     19s] Total number of level shifter cells: 0
+[06/03 21:35:37     19s] Total number of power gating cells: 0
+[06/03 21:35:37     19s] Total number of isolation cells: 0
+[06/03 21:35:37     19s] Total number of power switch cells: 0
+[06/03 21:35:37     19s] Total number of pulse generator cells: 0
+[06/03 21:35:37     19s] Total number of always on buffers: 0
+[06/03 21:35:37     19s] Total number of retention cells: 0
+[06/03 21:35:37     19s] Total number of physical cells: 0
+[06/03 21:35:37     19s] List of usable buffers:
+[06/03 21:35:37     19s] Total number of usable buffers: 0
+[06/03 21:35:37     19s] List of unusable buffers:
+[06/03 21:35:37     19s] Total number of unusable buffers: 0
+[06/03 21:35:37     19s] List of usable inverters: INVX0
+[06/03 21:35:37     19s] Total number of usable inverters: 1
+[06/03 21:35:37     19s] List of unusable inverters:
+[06/03 21:35:37     19s] Total number of unusable inverters: 0
+[06/03 21:35:37     19s] List of identified usable delay cells:
+[06/03 21:35:37     19s] Total number of identified usable delay cells: 0
+[06/03 21:35:37     19s] List of identified unusable delay cells:
+[06/03 21:35:37     19s] Total number of identified unusable delay cells: 0
+[06/03 21:35:37     19s] No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+[06/03 21:35:37     19s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2097.6M, current mem=2097.6M)
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[06/03 21:35:37     19s] Summary for sequential cells identification: 
+[06/03 21:35:37     19s]   Identified SBFF number: 1
+[06/03 21:35:37     19s]   Identified MBFF number: 0
+[06/03 21:35:37     19s]   Identified SB Latch number: 0
+[06/03 21:35:37     19s]   Identified MB Latch number: 0
+[06/03 21:35:37     19s]   Not identified SBFF number: 0
+[06/03 21:35:37     19s]   Not identified MBFF number: 0
+[06/03 21:35:37     19s]   Not identified SB Latch number: 0
+[06/03 21:35:37     19s]   Not identified MB Latch number: 0
+[06/03 21:35:37     19s]   Number of sequential cells which are not FFs: 0
+[06/03 21:35:37     19s]  Visiting view : func_slow_max
+[06/03 21:35:37     19s]    : PowerDomain = none : Weighted F : unweighted  = 89.70 (1.000) with rcCorner = 0
+[06/03 21:35:37     19s]    : PowerDomain = none : Weighted F : unweighted  = 89.70 (1.000) with rcCorner = -1
+[06/03 21:35:37     19s]  Visiting view : func_fast_min
+[06/03 21:35:37     19s]    : PowerDomain = none : Weighted F : unweighted  = 39.90 (1.000) with rcCorner = 0
+[06/03 21:35:37     19s]    : PowerDomain = none : Weighted F : unweighted  = 39.90 (1.000) with rcCorner = -1
+[06/03 21:35:37     19s] **WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+[06/03 21:35:37     19s] TLC MultiMap info (StdDelay):
+[06/03 21:35:37     19s]   : fast_min + fast + 1 + no RcCorner := 39.9ps
+[06/03 21:35:37     19s]   : fast_min + fast + 1 + default_rc_corner := 39.9ps
+[06/03 21:35:37     19s]   : slow_max + slow + 1 + no RcCorner := 89.7ps
+[06/03 21:35:37     19s]   : slow_max + slow + 1 + default_rc_corner := 89.7ps
+[06/03 21:35:37     19s]  Setting StdDelay to: 89.7ps
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Deleting Cell Server Begin ...
+[06/03 21:35:37     19s] 
+[06/03 21:35:37     19s] TimeStamp Deleting Cell Server End ...
+[06/03 21:35:37     19s] @file 18:
+[06/03 21:35:37     19s] @@file 19: report_timing -path_type full_clock -max_paths 100 > reports/timing_report_late.rpt
+[06/03 21:35:37     19s] AAE_INFO: opIsDesignInPostRouteState() is 0
+[06/03 21:35:38     20s] AAE DB initialization (MEM=2327.32 CPU=0:00:00.0 REAL=0:00:00.0) 
+[06/03 21:35:38     20s] #################################################################################
+[06/03 21:35:38     20s] # Design Name: counter
+[06/03 21:35:38     20s] # Design Mode: 65nm
+[06/03 21:35:38     20s] # Analysis Mode: MMMC OCV 
+[06/03 21:35:38     20s] # Parasitics Mode: No SPEF/RCDB 
+[06/03 21:35:38     20s] # Signoff Settings: SI Off 
+[06/03 21:35:38     20s] #################################################################################
+[06/03 21:35:38     20s] Topological Sorting (REAL = 0:00:00.0, MEM = 2376.7M, InitMEM = 2376.7M)
+[06/03 21:35:38     20s] Start delay calculation (fullDC) (1 T). (MEM=2376.71)
+[06/03 21:35:38     20s] eee: Trim Metal Layers: { }
+[06/03 21:35:38     20s] eee: Trim Metal Layers: { }
+[06/03 21:35:38     20s] eee: Trim Metal Layers: { }
+[06/03 21:35:38     20s] eee: Trim Metal Layers: { }
+[06/03 21:35:38     20s] Start AAE Lib Loading. (MEM=2376.71)
+[06/03 21:35:38     20s] End AAE Lib Loading. (MEM=2395.79 CPU=0:00:00.0 Real=0:00:00.0)
+[06/03 21:35:38     20s] End AAE Lib Interpolated Model. (MEM=2395.79 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[06/03 21:35:38     20s] End Timing Check Calculation. (CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[06/03 21:35:38     20s] End Timing Check Calculation. (CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[06/03 21:35:38     20s] End delay calculation. (MEM=2593.3 CPU=0:00:00.1 REAL=0:00:00.0)
+[06/03 21:35:38     20s] End delay calculation (fullDC). (MEM=2593.3 CPU=0:00:00.1 REAL=0:00:00.0)
+[06/03 21:35:38     20s] *** CDM Built up (cpu=0:00:00.3  real=0:00:00.0  mem= 2593.3M) ***
+[06/03 21:35:38     20s] @@file 20: report_timing -path_type full_clock -max_paths 100 -early > reports/timing_report_early.rpt
+[06/03 21:35:38     20s] @@file 21: report_constraint -all_violators > reports/timing_all_violators.rpt
+[06/03 21:35:38     20s] @file 22: exit
+[06/03 21:35:38     20s] 
+[06/03 21:35:38     20s] *** Memory Usage v#1 (Current mem = 2535.297M, initial mem = 638.754M) ***
+[06/03 21:35:38     20s] 
+[06/03 21:35:38     20s] *** Summary of all messages that are not suppressed in this session:
+[06/03 21:35:38     20s] Severity  ID               Count  Summary                                  
+[06/03 21:35:38     20s] WARNING   IMPOPT-3000          1  Buffer footprint is not defined or is an...
+[06/03 21:35:38     20s] WARNING   TCLCMD-1461          2  Skipped unsupported command: %s          
+[06/03 21:35:38     20s] *** Message Summary: 3 warning(s), 0 error(s)
+[06/03 21:35:38     20s] 
+[06/03 21:35:38     20s] --- Ending "Tempus Timing Solution" (totcpu=0:00:20.6, real=0:00:24.0, mem=2535.3M) ---
